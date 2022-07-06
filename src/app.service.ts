@@ -1,14 +1,29 @@
-import { Injectable } from '@nestjs/common';
+import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/common';
 
 @Injectable()
 export class AppService {
   googleLogin(req){
+
+    console.log(req.user);
+    
+
     if(!req.user){
-      return 'No User from Google';
+      throw new NotFoundException('User not found');
     }
-    return {
-      message: 'User Info from Google',
-      user: req.user
+
+    let email = req.user.email;
+    let domain = email.substring(email.lastIndexOf("@")+1);
+
+
+    if(domain==="itbhu.ac.in" || domain==="iitbhu.ac.in"){
+      return {
+        message: 'User Info from Google',
+        user: req.user
+      }
     }
+    else{
+      throw new ForbiddenException('User is not authorised');
+    }
+
   }
 }

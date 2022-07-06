@@ -1,5 +1,5 @@
 export declare class AppService {
-    googleLogin(req: any): "No User from Google" | {
+    googleLogin(req: any): {
         message: string;
         user: any;
     };
