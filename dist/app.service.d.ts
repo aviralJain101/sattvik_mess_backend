@@ -1,3 +1,6 @@
 export declare class AppService {
-    getHello(): string;
+    googleLogin(req: any): "No User from Google" | {
+        message: string;
+        user: any;
+    };
 }

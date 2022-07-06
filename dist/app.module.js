@@ -11,6 +11,7 @@ const common_1 = require("@nestjs/common");
 const mongoose_1 = require("@nestjs/mongoose");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
+const google_strategy_1 = require("./google.strategy");
 const notice_module_1 = require("./notice/notice.module");
 let AppModule = class AppModule {
 };
@@ -18,7 +19,7 @@ AppModule = __decorate([
     (0, common_1.Module)({
         imports: [notice_module_1.NoticeModule, mongoose_1.MongooseModule.forRoot("mongodb+srv://aayush:1234@nodeexpressprojects.gzma6.mongodb.net/nestjs-intro?retryWrites=true&w=majority")],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService, google_strategy_1.GoogleStrategy],
     })
 ], AppModule);
 exports.AppModule = AppModule;
