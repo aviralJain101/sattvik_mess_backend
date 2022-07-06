@@ -10,7 +10,6 @@ exports.AppService = void 0;
 const common_1 = require("@nestjs/common");
 let AppService = class AppService {
     googleLogin(req) {
-        console.log(req.user);
         if (!req.user) {
             throw new common_1.NotFoundException('User not found');
         }

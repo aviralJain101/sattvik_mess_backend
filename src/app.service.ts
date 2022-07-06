@@ -4,9 +4,6 @@ import { ForbiddenException, Injectable, NotFoundException } from '@nestjs/commo
 export class AppService {
   googleLogin(req){
 
-    console.log(req.user);
-    
-
     if(!req.user){
       throw new NotFoundException('User not found');
     }
