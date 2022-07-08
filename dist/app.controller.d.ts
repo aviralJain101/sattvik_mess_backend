@@ -7,4 +7,5 @@ export declare class AppController {
         message: string;
         user: any;
     };
+    getHello(): string;
 }

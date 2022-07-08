@@ -24,6 +24,9 @@ let AppController = class AppController {
     googleAuthRedirect(req) {
         return this.appService.googleLogin(req);
     }
+    getHello() {
+        return this.appService.getHello();
+    }
 };
 __decorate([
     (0, common_1.Get)(),
@@ -41,6 +44,12 @@ __decorate([
     __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", void 0)
 ], AppController.prototype, "googleAuthRedirect", null);
+__decorate([
+    (0, common_1.Get)(),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], AppController.prototype, "getHello", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

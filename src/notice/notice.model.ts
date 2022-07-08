@@ -6,7 +6,7 @@ export const NoticeSchema = new mongoose.Schema({
 });
 
 export interface Notice extends mongoose.Document{
-    id: string;
+    id: String;
     messNumber: Number;
     message: String;
 }

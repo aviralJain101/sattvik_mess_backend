@@ -4,11 +4,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GoogleStrategy } from './google.strategy';
 import { NoticeModule } from './notice/notice.module';
+import { userModule } from './user/user.module';
 
 @Module({
-  imports: [NoticeModule ,MongooseModule.forRoot("mongodb+srv://aayush:1234@nodeexpressprojects.gzma6.mongodb.net/nestjs-intro?retryWrites=true&w=majority")],
-  // imports: [NoticeModule],
-  // imports:[],
+  imports: [
+    userModule,
+    NoticeModule,
+    MongooseModule.forRoot(
+      'mongodb+srv://aayush:1234@nodeexpressprojects.gzma6.mongodb.net/nestjs-intro?retryWrites=true&w=majority',
+    ),
+  ],
   controllers: [AppController],
   providers: [AppService, GoogleStrategy],
 })

@@ -15,4 +15,9 @@ export class AppController {
   googleAuthRedirect(@Req() req){
     return this.appService.googleLogin(req);
   }
+
+  @Get()
+  getHello(): string {
+    return this.appService.getHello();
+  }
 }

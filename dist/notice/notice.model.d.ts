@@ -4,7 +4,7 @@ export declare const NoticeSchema: mongoose.Schema<any, mongoose.Model<any, any,
     message: string;
 }>;
 export interface Notice extends mongoose.Document {
-    id: string;
+    id: String;
     messNumber: Number;
     message: String;
 }

@@ -3,4 +3,5 @@ export declare class AppService {
         message: string;
         user: any;
     };
+    getHello(): string;
 }

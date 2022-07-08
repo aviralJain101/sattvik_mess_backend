@@ -25,6 +25,9 @@ let AppService = class AppService {
             throw new common_1.ForbiddenException('User is not authorised');
         }
     }
+    getHello() {
+        return 'Hello World!';
+    }
 };
 AppService = __decorate([
     (0, common_1.Injectable)()
