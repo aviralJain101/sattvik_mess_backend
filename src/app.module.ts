@@ -5,13 +5,16 @@ import { AppService } from './app.service';
 import { GoogleStrategy } from './google.strategy';
 import { NoticeModule } from './notice/notice.module';
 import { userModule } from './user/user.module';
+import { config } from 'dotenv';
+
+config();
 
 @Module({
   imports: [
     userModule,
     NoticeModule,
     MongooseModule.forRoot(
-      'mongodb+srv://aayush:1234@nodeexpressprojects.gzma6.mongodb.net/nestjs-intro?retryWrites=true&w=majority',
+      process.env.MONGO_URI,
     ),
   ],
   controllers: [AppController],
